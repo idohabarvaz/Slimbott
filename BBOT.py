@@ -48,7 +48,7 @@ async def on_ready():
 async def iq():
  IQ ==  random.ranint(0,200)
    await ctx.send('Your IQ is'IQ)
-   
+
 
 
 
