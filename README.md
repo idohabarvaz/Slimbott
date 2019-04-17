@@ -1,0 +1,2 @@
+# Slimbott
+Bot for slimbobo
