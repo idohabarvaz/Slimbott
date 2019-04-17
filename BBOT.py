@@ -47,7 +47,8 @@ async def on_ready():
 @bot.command()
 async def iq():
  IQ ==  random.ranint(0,200)
-   await ctx.send('Your IQ is'IQ)
+   await ctx.send('Your IQ is')
+   await ctx.send(IQ)
 
 
 
