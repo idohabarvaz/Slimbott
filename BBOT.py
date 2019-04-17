@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import random
 print(discord.__version__)
 
 bot = commands.Bot(command_prefix='$')
@@ -41,6 +42,13 @@ async def on_ready():
 @bot.event
 async def on_ready():
         print('bot is ready')
+      
+      
+ @bot.command()
+async def iq():
+ IQ ==  random.ranint(0,200)
+   await ctx.send('Your IQ is'IQ)
+   
 
 
 
