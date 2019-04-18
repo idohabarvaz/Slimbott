@@ -73,7 +73,11 @@ async def leave(ctx):
 
 
 
-
+@bot.command()
+async def iq(ctx):
+    author = ctx.message.author
+    IQ = random.randint(0,200)
+    await ctx.send(f"{author} has {IQ} IQ")
 
 
 
