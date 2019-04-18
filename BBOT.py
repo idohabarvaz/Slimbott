@@ -87,12 +87,12 @@ async def leave(ctx):
 
 
 
-
 @bot.command()
-async def iq(ctx):
-    author = ctx.message.author
-    IQ = random.randint(0,200)
-    await ctx.send(f"{author} has {IQ} IQ")
+async def iq(ctx,members: commands.Greedy[discord.Member]):
+  His_iq = ", ".join(x.name for x in members)
+  author = ctx.message.author
+  IQ = random.randint(0,200)
+  await ctx.send(f"{His_iq} has {IQ} IQ")
 
 
 
