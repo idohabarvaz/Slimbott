@@ -43,6 +43,21 @@ async def on_ready():
 async def on_ready():
         print('bot is ready')
       
+      
+      
+      
+      
+@bot.command()
+async def feedback(ctx, *, text):
+    slimbo = bot.get_user(180927756761169920)
+    author = ctx.message.author
+    if ctx.channel.id == 568518780146286602:
+         await ctx.message.delete()
+         await ctx.author.send("Sending the feedback to slimbo.....")
+         await slimbo.send(f"{author} send you a feedback: {text}")
+    else:
+         await ctx.message.delete()
+         await ctx.send(f"sorry {author} but you can't use the command here, try to use it in feedback channel.")
 
 
 
