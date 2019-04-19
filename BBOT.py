@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import random
 print(discord.__version__)
-
+from discord.utils import get
 bot = commands.Bot(command_prefix='$')
 
 
@@ -38,21 +38,20 @@ bot = commands.Bot(command_prefix='$')
       
       
       
-      
 @bot.command()
 async def feedback(ctx, *, text):
+    
+    channel = discord.utils.get(ctx.guild.channels, name="feedbacks")
     slimbo = ctx.guild.owner.id
     author = ctx.message.author
-    if ctx.channel.id == 568518780146286602:
+    if ctx.channel.id == channel.id:
          await ctx.message.delete()
          await ctx.author.send("Sending the feedback to the owner.....")
-         await asyncio.sleep(2)
-         await bot.message.delete()
+         await ctx.message.delete()
          await slimbo.send(f"{author} send you a feedback: {text}")
     else:
          await ctx.message.delete()
-         await ctx.send(f"sorry {author} but you can't use the command here, try to use it in feedback channel.")
-
+    await ctx.send(f"sorry {author} but you can't use the command here, try to use it in feedback channel.")
 
 
 
