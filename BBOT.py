@@ -37,18 +37,18 @@ bot = commands.Bot(command_prefix='$')
       
       
       
-      
 @bot.command()
 async def feedback(ctx, *, text):
     
     channel = discord.utils.get(ctx.guild.channels, name="feedbacks")
-    slimbo = ctx.guild.owner.id
+    slimbo = ctx.guild.owner
     author = ctx.message.author
     if ctx.channel.id == channel.id:
-         await ctx.message.delete()
-         await ctx.author.send("Sending the feedback to the owner.....")
-         await ctx.message.delete()
          await slimbo.send(f"{author} send you a feedback: {text}")
+         await ctx.message.delete()
+         await ctx.author.send("Thank You.")
+         await asyncio.sleep(2)
+         await ctx.message.delete()
     else:
          await ctx.message.delete()
     await ctx.send(f"sorry {author} but you can't use the command here, try to use it in feedback channel.")
