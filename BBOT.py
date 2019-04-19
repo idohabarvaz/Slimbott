@@ -45,7 +45,7 @@ async def feedback(ctx, *, text):
     author = ctx.message.author
     if ctx.channel.id == 568518780146286602:
          await ctx.message.delete()
-         await ctx.author.send("Sending the feedback to slimbo.....")
+         await ctx.author.send("Sending the feedback to the owner.....")
          await asyncio.sleep(2)
          await bot.message.delete()
          await slimbo.send(f"{author} send you a feedback: {text}")
