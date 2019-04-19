@@ -38,7 +38,7 @@ async def on_ready():
 @bot.event
 async def on_ready():
     await bot.change_presence(game=discord.Game(name="$help"))
-        print('bot is ready')
+       
       
       
       
