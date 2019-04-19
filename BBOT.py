@@ -11,8 +11,8 @@ bot = commands.Bot(command_prefix='$')
 
 @bot.event
 async def on_ready():
-   game = discord.Game("with the API")
-   await client.change_presence(status=discord.Status.idle, activity=game)
+  await bot.change_presence(status=discord.Status.idle, activity=game, )
+  print('bot is ready')
 
 
 
@@ -24,23 +24,20 @@ async def on_ready():
 
 
 
+
+
+
+
+    
+    
+
+
+
+
+
 @bot.event
 async def on_ready():
     await bot.change_presence(game=discord.Game(name="$help"))
-    print("bot is readyy")
-
-
-
-
-    
-    
-
-
-
-
-
-@bot.event
-async def on_ready():
         print('bot is ready')
       
       
@@ -49,11 +46,13 @@ async def on_ready():
       
 @bot.command()
 async def feedback(ctx, *, text):
-    slimbo = bot.get_user(180927756761169920)
+    slimbo = ctx.guild.owner.id
     author = ctx.message.author
     if ctx.channel.id == 568518780146286602:
          await ctx.message.delete()
          await ctx.author.send("Sending the feedback to slimbo.....")
+         await asyncio.sleep(2)
+         await bot.message.delete()
          await slimbo.send(f"{author} send you a feedback: {text}")
     else:
          await ctx.message.delete()
@@ -96,11 +95,6 @@ async def iq(ctx,members: commands.Greedy[discord.Member]):
 
 
 
-
-@bot.command()
-async def h(ctx):
-    channelvc = ctx.author.voice_channel
-    await ctx.send("Someone need your help in {}".format(channelvc)) 
 
 
 @bot.command()
