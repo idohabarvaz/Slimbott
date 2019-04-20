@@ -41,8 +41,8 @@ async def trivia(ctx):
         await channel.send("Yes OR No only")
     if Q == 3:
         await channel.send('Ostriches bury their heads up to 18 inches in the sand. Yes OR no')
-    def check(m):
-            return m.content == 'no' or 'yes' and m.channel == channel
+    def check(r):
+            return r.content == 'no' or 'yes' and r.channel == channel
     
     msg2 = await bot.wait_for('message', check=check)
     if msg2 == 'no':
