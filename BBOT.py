@@ -22,10 +22,11 @@ bot = commands.Bot(command_prefix='$')
 
 
 
+@bot.command()
+async def invite(ctx):
+  await ctx.send("https://discordapp.com/api/oauth2/authorize?client_id=561278229177171972&permissions=0&scope=bot")
+  
 
-
-
-    
     
 
 
