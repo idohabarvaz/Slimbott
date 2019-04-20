@@ -10,47 +10,6 @@ bot = commands.Bot(command_prefix='$')
 
 
 
-@bot.command()
-async def trivia(ctx):
-    Q = random.randint(1,3)
-    channel = ctx.message.channel
-    if Q == 1:
-     await channel.send('Flight recorders onboard planes are painted black boxes. Yes OR No')
-
-    def check(m):
-            return m.content == 'no' or 'yes' and m.channel == channel
-    
-    msg = await bot.wait_for('message', check=check)
-    if msg.content == 'no':
-      await channel.send('You are right')
-    if msg.content == 'yes':
-         await channel.send("False!")
-    else:
-        await channel.send("Yes OR No")
-    if Q == 2:
-        await channel.send('Other than water, coffee is the world\'s most popular drink. Yes OR No')
-    def check(r):
-            return r.content == 'no' or 'yes' and r.channel == channel
-    
-    msg1 = await bot.wait_for('message', check=check)
-    if msg1.content == 'no':
-        await channel.send("False!")
-    if msg1.content == 'yes':
-        await channel.send("right!")
-    else:
-        await channel.send("Yes OR No only")
-    if Q == 3:
-        await channel.send('Ostriches bury their heads up to 18 inches in the sand. Yes OR no')
-    def check(r):
-            return r.content == 'no' or 'yes' and r.channel == channel
-    
-    msg2 = await bot.wait_for('message', check=check)
-    if msg2 == 'no':
-        await channel.send("Right!")
-    if msg2 == 'yes':
-        await channel.send("False!")
-    else:
-        await channel.send("Yes OR No only")
 
 
 
