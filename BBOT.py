@@ -11,6 +11,22 @@ bot = commands.Bot(command_prefix='$')
 
 
 
+@bot.command()
+async def h(ctx):
+ embed=discord.Embed(title="MarsBoat Help", color=0xe124d3)
+ embed.set_author(name="MarsBoat Commands ")
+ embed.set_thumbnail(url="https://res.cloudinary.com/teepublic/image/private/s--PSVQzzUf--/t_Preview/b_rgb:5e366e,c_limit,f_jpg,h_630,q_90,w_630/v1525073416/production/designs/2640845_0.jpg")
+ embed.add_field(name="$h", value="See this message", inline=True)
+ embed.add_field(name="$feedback", value="Write Feedback on The channel you are using", inline=False)
+ embed.add_field(name="$feedbot" , value="Write a feeback about my bot", inline=False)
+ embed.add_field(name="$iq", value="Shows someone's iq", inline=True)
+ embed.add_field(name='$slap', value='slap someone', inline=True)
+ embed.add_field(name='$clear', value='Clear amount of messages', inline=True)
+ embed.add_field(name='$echo', value='Send what you send', inline=True)
+ embed.add_field(name='$owner', value='Shows The guild owner', inline=True)
+ embed.add_field(name='$invite', value='Invite the bot to your server', inline=True)
+ embed.set_footer(text="IDO#6999")
+ await ctx.send(embed=embed)
 
 
 
@@ -29,9 +45,18 @@ async def invite(ctx):
     
 
 
+@bot.command()
+async def feedbot(ctx, *, text):
+   ido = bot.get_user(427841299920453634)
+   author = ctx.message.author
+   await ido.send(f"{author} sent you a feedbot: {text}")
+   await ctx.message.delete()
 
-
-
+@bot.command()
+async def owner(ctx):
+    owner = ctx.guild.owner
+    owner_id = ctx.guild.owner.id
+    await ctx.send(f"The Guild's owner is {owner} and his id is {owner_id}")
 
        
       
