@@ -25,7 +25,6 @@ async def h(ctx):
  embed.add_field(name='$echo', value='Send what you send', inline=True)
  embed.add_field(name='$owner', value='Shows The guild owner', inline=True)
  embed.add_field(name='$invite', value='Invite the bot to your server', inline=True)
- embed.add_field(name='$war', value='Play War with a me', inline=True)
  embed.set_footer(text="IDO#6999")
  await ctx.send(embed=embed)
 
