@@ -25,6 +25,7 @@ async def h(ctx):
  embed.add_field(name='$echo', value='Send what you send', inline=True)
  embed.add_field(name='$owner', value='Shows The guild owner', inline=True)
  embed.add_field(name='$invite', value='Invite the bot to your server', inline=True)
+  embed.add_field(name='$war', value='Play War with a me', inline=True)
  embed.set_footer(text="IDO#6999")
  await ctx.send(embed=embed)
 
@@ -114,8 +115,39 @@ async def iq(ctx,members: commands.Greedy[discord.Member]):
 
 
 
-
-
+@bot.command()
+async def war(ctx):
+    author = ctx.message.author
+    pc = random.randint(1, 13)
+    bot = random.randint(1, 13)
+    if pc == bot:
+        bot = random.randint(1, 13)
+        pc = random.randint(1, 13)
+        await ctx.send("its a draw")
+        await ctx.send("1 2 3 ")
+        if bot > pc:
+            await ctx.send("bot  won")
+        if pc > bot:
+            await ctx.send("You are the winner")
+    if pc > bot:
+        await ctx.send(f"{author} = {pc} and bot = {bot}")
+        await ctx.send("You are the winner")
+    if pc < bot:
+        await ctx.send(f"{author} = {pc} and bot = {bot}")
+        await ctx.send('You are the loser')
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 @bot.command()
 async def clear(ctx, amount: int):
     deleted = await ctx.channel.purge(limit=amount)
