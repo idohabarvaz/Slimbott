@@ -105,7 +105,7 @@ async def leave(ctx):
   
   
   
-  @bot.command()
+@bot.command()
 async def bigorsmall(ctx, *, thing):
     thingy = random.randint(1, 2)
     if thingy == 1:
