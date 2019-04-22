@@ -102,6 +102,51 @@ async def join(ctx):
 @bot.command()
 async def leave(ctx):
         await ctx.voice_client.disconnect()
+  
+  
+  
+  @bot.command()
+async def bigorsmall(ctx, *, thing):
+    thingy = random.randint(1, 2)
+    if thingy == 1:
+        await ctx.send(f"{thing} is  small")
+    if thingy == 2:
+        await ctx.send(f"{thing} is  huge")
+
+    
+   
+
+
+
+
+@bot.command()
+async def guess(ctx, num):
+    random_num = random.randint(1, 10)
+    await ctx.send("1 - 10")
+    if num == random_num:
+        await ctx.send("Good Job!")
+    else:
+        await ctx.send(f"{num} to {random_num} sooo close")
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
